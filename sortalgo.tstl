@@ -1,0 +1,48 @@
+@import sorting_algorithms as alg
+
+pool: <intarray> 10
+<intarray> := []
+<intarray>.append(<int>)
+<intarray> := sorted(<intarray>)
+<intarray> := <intarray>.copy()
+
+<int> := 0
+<int> := 1
+<int> += 1
+<int> -= 1
+
+<action>
+assert sorted(<intarray>) == alg.bubble_sort(<intarray>.copy())
+
+<action>
+assert sorted(<intarray>) == alg.selection_sort(<intarray>.copy())
+
+<action>
+assert sorted(<intarray>) == alg.insertion_sort(<intarray>.copy())
+
+<action>
+assert sorted(<intarray>) == alg.merge_sort(<intarray>.copy())
+
+<action>
+assert sorted(<intarray>) == alg.quick_sort(<intarray>.copy())
+
+<action>
+assert sorted(<intarray>) == alg.heap_sort(<intarray>.copy())
+
+<action>
+assert sorted(<intarray>) == alg.shell_sort(<intarray>.copy())
+
+<action>
+# Only for non-negative integers
+if all(x >= 0 for x in <intarray>):
+    assert sorted(<intarray>) == alg.counting_sort(<intarray>.copy())
+
+<action>
+# Only for non-negative integers
+if all(x >= 0 for x in <intarray>):
+    assert sorted(<intarray>) == alg.radix_sort(<intarray>.copy())
+
+<action>
+# Assuming bucket sort returns the sorted list
+assert sorted(<intarray>) == alg.bucket_sort(<intarray>.copy())
+
